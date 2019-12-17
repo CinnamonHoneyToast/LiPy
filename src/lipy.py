@@ -51,8 +51,8 @@ class lp():
                                 file = self.dir_path + '/' + self.get_command()+'.py'
                                 exec(open(file).read())
 
-                        # except NameError:
-                        #         print("Command not found!")
+                        except NameError:
+                                 print("Command not found!")
                         except ModuleNotFoundError:
                                 print("Command not found!")
 
