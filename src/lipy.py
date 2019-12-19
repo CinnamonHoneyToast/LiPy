@@ -70,12 +70,11 @@ class LiPy():
                         return None
 
 
-#create lp object
-lipy = LiPy(objective_string)
-
 if __name__ == "__main__":
         
-
+        #create lp object
+        lipy = LiPy(objective_string)
+        
         #get directory path and system host name
         lipy.shell()
 
