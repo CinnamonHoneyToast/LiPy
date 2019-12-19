@@ -13,7 +13,7 @@ version: 0.1.1
 Made with <3 by Hustlers!
 """
 
-class lp():
+class LiPy():
 
         def __init__(self, ob_string):
                 self.objective_string = ob_string
@@ -25,7 +25,7 @@ class lp():
                 # Get System Hostname
                 self.system_hostname = socket.gethostname()
 
-                self.command_line_shell = self.dir_path + "/"+ self.system_hostname + "$ "
+                self.command_line_shell = self.dir_path + "/" + self.system_hostname + "$ "
                 print(self.objective_string)
 
         def run_commands(self):
@@ -56,23 +56,24 @@ class lp():
                         except ModuleNotFoundError:
                                 print("Command not found!")
 
-         #function to get command
+        #function to get command
         def get_command(self):
                 self.command = self.command_arguments.split()[0]
-                # print(type(self.command))
                 return self.command
 
         #function to get argument
         def get_argument(self):
-                self.argument = self.command_arguments.split()[1]
-                return self.argument
-                
+                try:
+                        self.argument = self.command_arguments.split()[1]
+                        return self.argument
+                except:
+                        return None
 
 
 #create lp object
-lipy = lp(objective_string)
+lipy = LiPy(objective_string)
 
-if __name__=="__main__":
+if __name__ == "__main__":
         
 
         #get directory path and system host name

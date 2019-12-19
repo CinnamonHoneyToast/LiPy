@@ -2,11 +2,14 @@ import os
 from __main__ import lipy
 
 
-class cd():
+class ChangeDirectory():
 
     # change the directory
     def change_dir(self):
-        os.chdir(lipy.get_argument())
+        if(lipy.get_argument()!=None):
+            os.chdir(lipy.get_argument())
+        else:
+            os.chdir(lipy.dir_path)
 
     # get current working directory
     def get_cwd(self):
@@ -14,23 +17,25 @@ class cd():
 
     # update command line shell
     def shell_update(self):
-        lipy.command_line_shell = self.dir_pat + "/" + "$ "
+        lipy.command_line_shell = self.dir_pat + "/" + lipy.system_hostname + "$ "
 
 
-# create object
-cd_ob = cd()
+#Ccreate object
+cd_ob = ChangeDirectory()
+
 
 try:
     cd_ob.change_dir()
     cd_ob.get_cwd()
     cd_ob.shell_update()
-    
+        
 except FileNotFoundError:
-    print("Path not defined!")
+     print("Path not defined!")
 
 except NotADirectoryError:
-    print("The directory name is invalid")
-    
+     print("The directory name is invalid")
 
+
+    
     
 

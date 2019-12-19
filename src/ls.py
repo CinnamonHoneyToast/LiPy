@@ -1,7 +1,7 @@
 import os
 
 
-class ls():
+class Lists():
 
     #get current working directory path
     def dir_path(self):
@@ -13,7 +13,7 @@ class ls():
             print(filename)
 
 # create object
-ls_ob = ls()
+ls_ob = Lists()
 
 # Call the function here, so that the code within the method is executed upon import.
 ls_ob.dir_path()
